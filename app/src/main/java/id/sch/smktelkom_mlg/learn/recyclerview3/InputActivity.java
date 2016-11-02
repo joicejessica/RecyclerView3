@@ -17,7 +17,10 @@ import id.sch.smktelkom_mlg.learn.recyclerview3.model.Hotel;
 public class InputActivity extends AppCompatActivity
 {
     static final int REQUEST_IMAGE_GET = 1;
-    EditText etJudul, etDeskripsi, etDetail, etLokasi;
+    EditText etJudul;
+    EditText etDeskripsi;
+    EditText etDetail;
+    EditText etLokasi;
     ImageView ivFoto;
     Uri uriFoto;
     Hotel hotel;
@@ -113,6 +116,7 @@ public class InputActivity extends AppCompatActivity
         {
             hotel = new Hotel(judul, deskripsi,
                     detail, lokasi, uriFoto.toString());
+
             Intent intent = new Intent();
             intent.putExtra(MainActivity.HOTEL, hotel);
             setResult(RESULT_OK, intent);
@@ -147,7 +151,8 @@ public class InputActivity extends AppCompatActivity
 
         if (uriFoto == null)
         {
-            Snackbar.make(ivFoto, "Foto Belum Ada", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(ivFoto, "Foto Belum Ada", Snackbar.LENGTH_SHORT)
+                    .show();
             valid = false;
         }
 

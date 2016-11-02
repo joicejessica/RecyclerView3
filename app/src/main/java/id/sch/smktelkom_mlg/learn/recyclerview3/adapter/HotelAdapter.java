@@ -78,6 +78,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>
             bDelete = (Button) itemView.findViewById(R.id.buttonDelete);
             ibFav = (ImageButton) itemView.findViewById(R.id.buttonFavorite);
             ibShare = (ImageButton) itemView.findViewById(R.id.buttonShare);
+
             itemView.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -86,21 +87,34 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>
                     mIHotelAdpater.doClick(getAdapterPosition());
                 }
             });
-            bEdit.setOnClickListener(new View.OnClickListener() {
+            bEdit.setOnClickListener(new View.OnClickListener()
+            {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v)
+                {
                     mIHotelAdpater.doEdit(getAdapterPosition());
                 }
             });
-            bDelete.setOnClickListener(new View.OnClickListener() {
+            bDelete.setOnClickListener(new View.OnClickListener()
+            {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v)
+                {
                     mIHotelAdpater.doDelete(getAdapterPosition());
                 }
             });
-            ibShare.setOnClickListener(new View.OnClickListener() {
+            ibFav.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v)
+                {
+                    mIHotelAdpater.doFav(getAdapterPosition());
+                }
+            });
+            ibShare.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
                     mIHotelAdpater.doShare(getAdapterPosition());
                 }
             });
