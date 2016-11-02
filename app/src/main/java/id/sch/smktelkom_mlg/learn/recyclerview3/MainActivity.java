@@ -131,8 +131,22 @@ public class MainActivity extends AppCompatActivity implements HotelAdapter.IHot
     }
 
     @Override
-    public void doDelete(int pos) {
-
+    public void doDelete(int pos)
+    {
+        itempos = pos;
+        final  Hotel hotel = mList.get(pos);
+        mList.remove(itempos);
+        mAdapter.notifyDataSetChanged();
+        Snackbar.make(findViewById(R.id.fab),hotel.judul+" Terhapus",Snackbar.LENGTH_LONG)
+                .setAction("Undo", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        mList.add(itempos,hotel);
+                        mAdapter.notifyDataSetChanged();
+                    }
+                })
+                .show();
     }
 
     @Override
