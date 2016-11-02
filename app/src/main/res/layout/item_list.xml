@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             style="?android:attr/borderlessButtonStyle"/>
 
-        <ImageView
+        <ImageButton
             android:id="@+id/buttonFavorite"
             android:layout_marginRight="16dp"
             android:layout_below="@+id/textViewDeskripsi"
@@ -76,7 +76,7 @@
             style="?android:attr/borderlessButtonStyle"
             app:srcCompat="@drawable/ic_favorite_black_24dp"/>
 
-        <ImageView
+        <ImageButton
             android:id="@+id/buttonShare"
             android:layout_marginRight="16dp"
             android:layout_below="@+id/textViewDeskripsi"

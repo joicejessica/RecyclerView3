@@ -42,6 +42,17 @@ public class InputActivity extends AppCompatActivity
             }
         });
 
+        hotel = (Hotel) getIntent().getSerializableExtra(MainActivity.HOTEL);
+        if (hotel!=null)
+        {
+            setTitle("Edit "+hotel.judul);
+            fillData();
+        }
+        else
+        {
+            setTitle("New Hotel");
+        }
+
         findViewById(R.id.buttonSimpan).setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -51,6 +62,16 @@ public class InputActivity extends AppCompatActivity
                     }
                 }
         );
+    }
+
+    private void fillData()
+    {
+        etJudul.setText(hotel.judul);
+        etDeskripsi.setText(hotel.deskripsi);
+        etDetail.setText(hotel.detail);
+        etLokasi.setText(hotel.lokasi);
+        uriFoto = Uri.parse(hotel.foto);
+        ivFoto.setImageURI(uriFoto);
     }
 
     private void pickPhoto()
@@ -137,5 +158,4 @@ public class InputActivity extends AppCompatActivity
     {
         editText.setError(((TextInputLayout) editText.getParent().getParent()).getHint() + " Belum Diisi");
     }
-
 }
